@@ -1,0 +1,236 @@
+/* Remove default spacing and make sizes easier to manage. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfbf8;
+    color: #191919;
+}
+
+/* Keep all content centred with space on both sides. */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Flexbox places the navbar items in a row. */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding: 30px 0;
+}
+
+.logo {
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #a56f50;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.language {
+    font-size: 11px;
+    color: #777;
+    letter-spacing: 1px;
+}
+
+.language strong {
+    color: #a56f50;
+}
+
+/* These shared styles are used by all three buttons. */
+.button {
+    display: inline-block;
+    padding: 13px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.dark {
+    background-color: #191919;
+    color: white;
+    border: 1px solid #191919;
+    box-shadow: 0 8px 15px #00000020;
+}
+
+.dark:hover {
+    background-color: #a56f50;
+    border-color: #a56f50;
+}
+
+.light {
+    border: 1px solid #ccc;
+    background-color: transparent;
+}
+
+.light:hover {
+    background-color: #eee5dc;
+}
+
+a:focus-visible {
+    outline: 3px solid #a56f50;
+    outline-offset: 5px;
+}
+
+/* The hero has two columns: text and image. */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 55px;
+    padding: 45px 0 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+.hero-text {
+    flex: 1;
+    padding-top: 45px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    font-weight: bold;
+    color: #a56f50;
+    letter-spacing: 2px;
+    margin-bottom: 26px;
+}
+
+h1 {
+    font-size: 49px;
+    line-height: 1.05;
+    letter-spacing: -2.5px;
+    margin-bottom: 24px;
+}
+
+h1 span {
+    color: #b88769;
+}
+
+.description {
+    max-width: 480px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    margin-bottom: 26px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.partners {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 27px;
+    margin-top: 95px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #93908c;
+    letter-spacing: 1px;
+}
+
+.trusted {
+    font-size: 11px;
+    font-weight: normal;
+    letter-spacing: 0;
+}
+
+/* Unequal corner curves create the reference's organic photo shape. */
+.hero-photo {
+    width: 46%;
+    height: 510px;
+    overflow: hidden;
+    border-radius: 40% 45% 65% 35% / 30% 30% 70% 65%;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 28%;
+}
+
+/* On smaller screens, stack the content instead of squeezing it. */
+@media (max-width: 850px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .hero-text {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    h1 {
+        font-size: 40px;
+        letter-spacing: -1.5px;
+    }
+
+    .partners {
+        margin-top: 40px;
+        gap: 20px;
+    }
+
+    .hero-photo {
+        width: 100%;
+        max-width: 500px;
+        height: 460px;
+    }
+}
+
+@media (max-width: 400px) {
+    .language {
+        display: none;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+}
